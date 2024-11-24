@@ -2,25 +2,64 @@
 
 Website, written in Typescript.
 
+* Usage
+
+** Setup
+
+Install dependencies:
+
+#+BEGIN_SRC sh
+$ bun install
+#+END_SRC
+
+** Development Server
+
+Start the development server on =http://localhost:3000=:
+
+#+BEGIN_SRC sh
+$ bun run dev
+$ bun run dev -o  # automatically open in the browser
+#+END_SRC
+
+** Production
+
+Build for production:
+
+#+BEGIN_SRC sh
+$ bun nuxi build     # for server-side rendering or hybrid
+$ bun nuxi generate  # for static site generation
+#+END_SRC
+
+Locally preview production build:
+
+#+BEGIN_SRC sh
+$ bun run preview  # requires building first!
+#+END_SRC
+
+Reference: [[https://nuxt.com/docs/getting-started/deployment#client-side-only-rendering][nuxt/docs/deployment#client-side-only-rendering]]
+
 * Libraries
 
-- Vue.js 3
-- Nuxt
-- Pinia
-- PrimeVue
-- ESLint
+- [[https://github.com/vuejs/core][Vue3]] JavaScript framework
+- [[https://github.com/nuxt/nuxt][Nuxt]] Vue framework
+- [[https://github.com/vuejs/pinia][Pinia]] State management
+- [[https://github.com/primefaces/primevue][PrimeVue]] Vue component library
+- [[https://github.com/colinhacks/zod][Zod]] Schema validation
+- [[https://github.com/microsoft/TypeScript][Typescript]] Static types in JavaScript
+- [[https://github.com/eslint/eslint][ESLint]] Code analyses tool
 
-* Development
+** Package Reproduction
 
-The following editor setup has been used:
+The following bun commands have been run to fill the =package.json=:
 
 #+BEGIN_SRC sh
 $ bun x nuxi@latest init website
+
+# Development
 $ bun nuxi module add eslint
 $ bun install --dev typescript
 $ bun install --dev @vue/language-server
 $ bun install --dev @vue/typescript-plugin
-
 $ bun install -g typescript
 $ bun install -g @vue/language-server
 $ bun install -g @vue/typescript-plugin
@@ -31,4 +70,7 @@ $ bun install pinia
 # PrimeVue
 $ bun install primevue primeicons @primevue/themes
 $ bun install --dev @primevue/nuxt-module
+
+# Zod
+$ bun install zod
 #+END_SRC
