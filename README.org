@@ -1,0 +1,34 @@
+* Website
+
+Website, written in Typescript.
+
+* Libraries
+
+- Vue.js 3
+- Nuxt
+- Pinia
+- PrimeVue
+- ESLint
+
+* Development
+
+The following editor setup has been used:
+
+#+BEGIN_SRC sh
+$ bun x nuxi@latest init website
+$ bun nuxi module add eslint
+$ bun install --dev typescript
+$ bun install --dev @vue/language-server
+$ bun install --dev @vue/typescript-plugin
+
+$ bun install -g typescript
+$ bun install -g @vue/language-server
+$ bun install -g @vue/typescript-plugin
+
+# Pinia
+$ bun install pinia
+
+# PrimeVue
+$ bun install primevue primeicons @primevue/themes
+$ bun install --dev @primevue/nuxt-module
+#+END_SRC

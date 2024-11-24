@@ -1,0 +1,32 @@
+{
+	"name": "website",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare"
+	},
+	"dependencies": {
+		"@primevue/themes": "^4.2.3",
+		"nuxt": "^3.14.1592",
+		"pinia": "^2.2.6",
+		"primeicons": "^7.0.0",
+		"primevue": "^4.2.3",
+		"vue": "latest",
+		"vue-router": "latest"
+	},
+	"devDependencies": {
+		"@nuxt/eslint": "^0.7.1",
+		"@primevue/nuxt-module": "^4.2.3",
+		"@types/bun": "latest",
+		"@vue/language-server": "^2.1.10",
+		"@vue/typescript-plugin": "^2.1.10",
+		"typescript": "^5.7.2"
+	},
+	"trustedDependencies": [
+		"@parcel/watcher"
+	]
+}
