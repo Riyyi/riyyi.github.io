@@ -65,12 +65,16 @@ $ bun install -g @vue/language-server
 $ bun install -g @vue/typescript-plugin
 
 # Pinia
-$ bun install pinia
+$ bun install @pinia/nuxt                 # also add it to nuxt.config modules!
+$ bun install pinia-plugin-persistedstate # same as above
 
 # PrimeVue
-$ bun install primevue primeicons @primevue/themes
+$ bun install primevue primeicons @primevue/themes @primevue/forms
 $ bun install --dev @primevue/nuxt-module
 
 # Zod
 $ bun install zod
+
+# UUID
+$ bun install uuid
 #+END_SRC

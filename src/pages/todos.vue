@@ -1,24 +1,18 @@
 <template>
-    <div class="card">
-        <DataTable :value="todos" tableStyle="min-width: 50rem">
-            <Column field="number" header="#"></Column>
-            <Column field="id" header="ID"></Column>
-            <Column field="title" header="Title"></Column>
-            <Column field="modifier" header="Modifier"></Column>
-        </DataTable>
-    </div>
+	<TodoBrowse />
+	<br>
+	<TodoAdd />
+	<br>
+	<Button @click="showToast()" type="button">Toast</Button>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-// import { ProductService } from '@/service/ProductService';
+import { useToast } from "primevue/usetoast";
 
- onMounted(() => {
-	 todos.value = [
-		 { number: "1", id: "toby", title: "Do stuff..", modifier: "hehe"}
-	 ]
-});
+const toast = useToast();
 
-const todos = ref();
+async function showToast() {
+	toast.add({ severity: "success", summary: "This is a toast", detail: "Wow!", life: 3000 });
+}
 
 </script>
