@@ -26,8 +26,8 @@ $ bun run dev -o  # automatically open in the browser
 Build for production:
 
 #+BEGIN_SRC sh
-$ bun nuxi build     # for server-side rendering or hybrid
-$ bun nuxi generate  # for static site generation
+$ bun run build     # for server-side rendering or hybrid
+$ bun run generate  # for static site generation
 #+END_SRC
 
 Locally preview production build:
