@@ -1,13 +1,14 @@
 <template>
 	<div class="card">
 		<ConfirmDialog></ConfirmDialog>
-		<DataTable :value="computedTodos" tableStyle="min-width: 50rem" @sort="onSort" sortMode="multiple" removableSort>
-			<Column field="number" header="#"></Column>
-			<Column field="id" header="ID" sortable filterField="id" showFilterMenu filter="true"></Column>
-			<Column field="title" header="Title" sortable filterField="title" showFilterMenu filter="true"></Column>
+		<DataTable :value="computedTodos" :lazy="true" tableStyle="min-width: 50rem" removableSort
+			v-model:sortField="sortField" v-model:sortOrder="sortOrder">
+			<Column field="number" header="#" />
+			<Column field="id" header="ID" sortable />
+			<Column field="title" header="Title" sortable />
 			<Column header="Modifier">
 				<template #body="slotProps">
-					<a @click="removeTodo(slotProps.data.id)">
+					<a @click="removeTodo(slotProps.data.id)" v-tooltip.top="'Delete'" class="pointer">
 						<span class="pi pi-trash" style="color: var(--p-red-600);"></span>
 					</a>
 				</template>
@@ -27,30 +28,18 @@ const confirm = useConfirm();
 const store = useTodoStore();
 const toast = useToast();
 
-const onSort = (event: any) => {
-	console.log(event);
-};
-
-const sorting = ref<Record<string, string>>({
-	id: "asc",
-	title: "asc",
-});
-
-function toggleSorting(key: string) {
-	sorting.value[key] = sorting.value[key] === 'asc' ? 'desc' : 'asc';
-};
+// Reactive bindings for sorting
+const sortField = ref<string>("");
+const sortOrder = ref<number>();
 
 function sortTodos(): Todo[] {
 	let todos: Todo[] = JSON.parse(JSON.stringify(store.todos)); // deep copy
 
-	// Number
-
-	// ID
-
-	// Title
-	todos = (sorting.value.title === "desc")
-		? todos.sort((a, b) => b.title.localeCompare(a.title))
-		: todos.sort((a, b) => a.title.localeCompare(b.title));
+	if (sortField.value) { // string or null
+		todos = (sortOrder.value == 1) // 1 or -1
+			? todos.sort((a, b) => a[sortField.value as keyof Todo]?.localeCompare(b[sortField.value as keyof Todo] || "") || 0)
+			: todos.sort((a, b) => b[sortField.value as keyof Todo]?.localeCompare(a[sortField.value as keyof Todo] || "") || 0);
+	}
 
 	return todos;
 }
@@ -85,3 +74,9 @@ const removeTodo = (id: String) => {
 	});
 };
 </script>
+
+<style>
+.pointer {
+	cursor: pointer;
+}
+</style>
