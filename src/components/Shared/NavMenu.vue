@@ -24,6 +24,8 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
+const currentDate = new Date().toLocaleString("nl-NL");
+
 const items = ref([
     {
         label: "Home",
@@ -52,5 +54,8 @@ const items = ref([
         icon: "pi pi-link",
 		route: "#"
     },
-]);
+    {
+        label: "Date: " + currentDate,
+    },
+ ]);
 </script>
