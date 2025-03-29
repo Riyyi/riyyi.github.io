@@ -40,9 +40,9 @@ const items = ref([
         }
     },
     {
-        label: "About",
+        label: "Articles",
         icon: "pi pi-link",
-		route: "#"
+		route: "/articles"
     },
     {
         label: "Service",
