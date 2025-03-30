@@ -13,19 +13,19 @@
 </template>
 
 <script setup lang="ts">
- const { params } = useRoute();
+const { params } = useRoute();
 
- console.log(params);
+console.log(params);
 
- const { data: article } = await useAsyncData(
-	 `article-${params.slug}`,
-	 () => queryCollection("content").path("/articles/" + params.slug).first()
- );
+const { data: article } = await useAsyncData(
+	`article-${params.slug}`,
+	() => queryCollection("content").path("/articles/" + params.slug).first()
+);
 
- useSeoMeta({
-	 title: article.value?.title,
-	 description: article.value?.description
- })
+useSeoMeta({
+	title: article.value?.title,
+	description: article.value?.description
+})
 
- console.log(article);
+console.log(article);
 </script>
