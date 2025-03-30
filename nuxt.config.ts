@@ -1,4 +1,6 @@
-import Aura from "@primevue/themes/aura";
+import Icons from "unplugin-icons/vite"
+import IconsResolver from "unplugin-icons/resolver"
+import ViteComponents from "unplugin-vue-components/vite"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -17,7 +19,7 @@ export default defineNuxtConfig({
 		}
 	},
 	css: [
-		"primeicons/primeicons.css",
+		"bootstrap/dist/css/bootstrap.min.css",
 		"~/assets/css/style.css"
 	],
 	devtools: { enabled: true },
@@ -25,11 +27,12 @@ export default defineNuxtConfig({
 		public: "../public"
 	},
 	modules: [
+		"@bootstrap-vue-next/nuxt",
 		"@nuxt/content",
 		"@nuxt/eslint",
 		"@pinia/nuxt",
-		"@primevue/nuxt-module",
 		"pinia-plugin-persistedstate/nuxt",
+		"unplugin-icons/nuxt"
 	],
 	pinia: {
 		storesDirs: ["src/stores/**"] // also auto-import nested directories
@@ -42,13 +45,18 @@ export default defineNuxtConfig({
 			secure: process.env.NODE_ENV !== "development" // only send over HTTPS
 		}
 	},
-	primevue: {
-		options: {
-			theme: {
-				preset: Aura
-			}
-		}
-	},
 	srcDir: "src/",
-	ssr: false
+	ssr: false,
+	vite: {
+		plugins: [
+			ViteComponents({
+				resolvers: [IconsResolver()],
+				dts: true
+			}),
+			Icons({
+				compiler: "vue3",
+				autoInstall: true,
+			}),
+		],
+	},
 })

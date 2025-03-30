@@ -1,61 +1,30 @@
 <template>
-    <div class="card">
-        <Menubar :model="items">
-            <template #item="{ item, props, hasSubmenu }">
-                <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
-                    <a v-ripple :href="href" v-bind="props.action" @click="navigate">
-                        <span :class="item.icon" />
-                        <span>{{ item.label }}</span>
-                    </a>
-                </router-link>
-                <a v-else v-ripple :href="item.url" :target="item.target" v-bind="props.action">
-                    <span :class="item.icon" />
-                    <span>{{ item.label }}</span>
-                    <span v-if="hasSubmenu" class="pi pi-fw pi-angle-down" />
-                </a>
-            </template>
-        </Menubar>
-    </div>
+	<BNavbar v-b-color-mode="'dark'" toggleable="lg" variant="dark" fixed="top">
+		<BNavbarBrand to="/">
+			<IFaHome /> Home
+		</BNavbarBrand>
+		<BNavbarToggle target="nav-collapse" />
+		<BCollapse id="nav-collapse" is-nav>
+			<!-- Left aligned nav items -->
+			<BNavbarNav>
+				<BNavItem to="/articles">Articles</BNavItem>
+				<BNavItem to="/todos">Todos</BNavItem>
+			</BNavbarNav>
+			<!-- Right aligned nav items -->
+			<BNavbarNav class="ms-auto mb-2 mb-lg-0">
+				<BNavItem href="https://git.riyyi.com/riyyi" target="_blank">
+					<IFaCoffee /> Gitea
+				</BNavItem>
+				<BNavItem href="https://github.com/riyyi" target="_blank">
+					<IFaGithub /> Github
+				</BNavItem>
+				<BNavItem href="https://gitlab.com/riyyi" target="_blank">
+					<IFaGitlab /> Gitlab
+				</BNavItem>
+				<BNavItem href="https://linkedin.com/in/rickvanvonderen" target="_blank">Linked
+					<IFaLinkedinSquare />
+				</BNavItem>
+			</BNavbarNav>
+		</BCollapse>
+	</BNavbar>
 </template>
-
-<script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-
-const currentDate = new Date().toLocaleString("nl-NL");
-
-const items = ref([
-    {
-        label: "Home",
-        icon: "pi pi-home",
-		route: "/"
-    },
-    {
-        label: "Todos",
-        icon: "pi pi-check",
-        command: () => {
-            router.push("/todos");
-        }
-    },
-    {
-        label: "Articles",
-        icon: "pi pi-link",
-		route: "/articles"
-    },
-    {
-        label: "Service",
-        icon: "pi pi-link",
-		route: "#"
-    },
-    {
-        label: "Contact",
-        icon: "pi pi-link",
-		route: "#"
-    },
-    {
-        label: "Date: " + currentDate,
-    },
- ]);
-</script>

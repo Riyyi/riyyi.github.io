@@ -1,16 +1,18 @@
 <template>
 	<div>
-		<h2 v-if="$slots.namedslot">
+		<strong v-if="$slots.namedslot">
 			<slot name="namedslot" mdc-unwrap="p" />
-		</h2>
+		</strong>
 		<h2 v-else>Broken Slot</h2>
 
-		<slot mdc-unwrap="p" />
+		<p>
+			<slot mdc-unwrap="p" />
+		</p>
 	</div>
 </template>
 
 <script setup lang="ts">
- defineProps({
-	 namedslot: String,
- });
+defineProps({
+	namedslot: String,
+});
 </script>

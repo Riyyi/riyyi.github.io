@@ -12,6 +12,41 @@
 	</div>
 </template>
 
+<style scoped>
+/* Target element in child components with :deep */
+
+/* Select any <a> inside a <h> */
+:deep(:is(h1, h2, h3, h4, h5, h6) > a) {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Select <pre class="shiki"> */
+:deep(pre.shiki) {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	background-color: #f6f8fa;
+}
+
+/* Select <code> and <code class="shiki"> */
+:deep(code:not(pre code)) {
+	padding: .2em .4em;
+	margin: 0;
+	font-size: 85%;
+	white-space: break-spaces;
+	background-color: #818b981f;
+	border-radius: 6px;
+}
+
+/* Select <code> */
+:deep(code:not(.shiki):not(pre code)) {
+	/* reset font to black */
+	color: inherit;
+}
+</style>
+
 <script setup lang="ts">
 const { params } = useRoute();
 
