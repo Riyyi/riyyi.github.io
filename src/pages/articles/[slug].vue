@@ -1,6 +1,8 @@
 <template>
 	<div>
 		<template v-if="article">
+			<ArticlesTableOfContents v-if="article.navigation" :toc="article.body.toc" />
+
 			<h1>{{ article.title }}</h1>
 			<p>{{ article.description }}</p>
 			<ContentRenderer :value="article" />
@@ -59,9 +61,11 @@
 </style>
 
 <script setup lang="ts">
+import type { ContentCollectionItem } from "@nuxt/content";
+
 const { params } = useRoute();
 
-const { data: article } = await useAsyncData(
+const { data: article } = await useAsyncData<ContentCollectionItem | null>(
 	`article-${params.slug}`,
 	() => queryCollection("content").path("/articles/" + params.slug).first()
 );
@@ -70,6 +74,4 @@ useSeoMeta({
 	title: article.value?.title,
 	description: article.value?.description
 })
-
-console.log(article);
 </script>

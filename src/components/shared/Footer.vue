@@ -6,6 +6,13 @@
 	</footer>
 </template>
 
+<style scoped>
+footer {
+	text-align: center;
+	color: #909090;
+}
+</style>
+
 <script setup lang="ts">
-const year = new Date().getFullYear();
+const year: number = new Date().getFullYear();
 </script>

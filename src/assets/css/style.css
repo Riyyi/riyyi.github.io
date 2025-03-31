@@ -18,26 +18,6 @@ body {
 /* Main content */
 /*----------------------------------------*/
 
-.container {
-	margin: 56px auto 0 auto;
-}
-
-.content {
-	position: relative;
-	min-height: calc(100vh - 104px - .5rem);
-	padding: 20px 20px 50px 20px;
-
-	background-color: #fff;
-}
-
 a:hover {
 	color: #818080 !important;
-}
-
-/* Footer */
-/*----------------------------------------*/
-
-footer {
-	text-align: center;
-	color: #909090;
 }

@@ -1,11 +1,12 @@
 ---
 title: "My First Blog Post"
 description: "This is a test article."
+navigation: true
 ---
 
-# Hello World
+## Hello World
 
-This is a test article.
+Foobarbazbuz.
 
 ## Component Rendering
 
