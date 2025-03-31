@@ -4,6 +4,9 @@ import ViteComponents from "unplugin-vue-components/vite"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+	bootstrapVueNext: {
+		css: false
+	},
 	compatibilityDate: "2024-11-01",
 	content: {
 		build: {
@@ -14,12 +17,18 @@ export default defineNuxtConfig({
 						// https://github.com/shikijs/shiki/blob/main/packages/langs/package.json
 						"c", "cpp", "css", "html", "js", "json", "lua", "md", "mdc", "php", "shell", "ts", "vue", "yaml"
 					]
+				},
+				toc: {
+					title: "Table of Contents",
+					depth: 4, // include h4 headings
+					searchDepth: 2
 				}
 			}
 		}
 	},
 	css: [
 		"bootstrap/dist/css/bootstrap.min.css",
+		"bootstrap-vue-next/dist/bootstrap-vue-next.css",
 		"~/assets/css/style.css"
 	],
 	devtools: { enabled: true },

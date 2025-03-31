@@ -28,3 +28,13 @@
 		</BCollapse>
 	</BNavbar>
 </template>
+
+<style scoped>
+nav {
+	box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .28);
+}
+
+[data-bs-theme=dark] nav {
+	box-shadow: 0 .25rem .5rem rgba(255, 0, 0, .28);
+}
+</style>

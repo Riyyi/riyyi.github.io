@@ -10,4 +10,5 @@
 		</div>
 		<SharedFooter />
 	</div>
+	<ToggleColorMode />
 </template>

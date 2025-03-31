@@ -15,8 +15,19 @@
 <style scoped>
 /* Target element in child components with :deep */
 
+/* Select any <h> */
+:deep(:is(h1, h2, h3, h4, h5, h6):has(span)) {
+	position: relative;
+}
+
+/* Select any <span> inside a <h> */
+:deep(:is(h1, h2, h3, h4, h5, h6) span) {
+	position: absolute;
+	top: -65px;
+}
+
 /* Select any <a> inside a <h> */
-:deep(:is(h1, h2, h3, h4, h5, h6) > a) {
+:deep(:is(h1, h2, h3, h4, h5, h6) a) {
 	color: inherit;
 	text-decoration: none;
 }
@@ -49,8 +60,6 @@
 
 <script setup lang="ts">
 const { params } = useRoute();
-
-console.log(params);
 
 const { data: article } = await useAsyncData(
 	`article-${params.slug}`,

@@ -21,6 +21,8 @@ declare module 'vue' {
     IFaHome: typeof import('~icons/fa/home')['default']
     IFaLink: typeof import('~icons/fa/link')['default']
     IFaLinkedinSquare: typeof import('~icons/fa/linkedin-square')['default']
+    IFaMoonO: typeof import('~icons/fa/moon-o')['default']
+    IFaSolidSun: typeof import('~icons/fa-solid/sun')['default']
     IMdiAccountBox: typeof import('~icons/mdi/account-box')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

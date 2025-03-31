@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 useHead({
-	titleTemplate: (titleChunk) => {
+	titleTemplate: (titleChunk: string): string => {
 		return titleChunk ? `${titleChunk} - website-vue` : 'website-vue';
 	}
 })
