@@ -58,7 +58,7 @@ A link: [website-vue](https://github.com/riyyi/website-vue)
 A codeblock:
 ```js [file.js]{2} meta-info=val
 export default () => {
-console.log('Code block')
+  console.log('Code block')
 }
 ```
 

@@ -1,6 +1,11 @@
 /*----------------------------------------*/
 /* General */
 
+:root {
+	--w-code-background-color: #818b981f;
+    --w-pre-background-color: #f6f8fa;
+}
+
 html {
 	font-family: "Segoe UI", "DejaVu Sans", sans-serif;
 	scroll-behavior: smooth;

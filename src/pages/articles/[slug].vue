@@ -27,7 +27,7 @@
 	justify-content: space-between;
 	margin-bottom: 1rem;
 	padding: 1rem;
-	background-color: #f6f8fa;
+	background-color: var(--w-pre-background-color);
 }
 
 /* Select <code> and <code class="shiki"> */
@@ -36,7 +36,7 @@
 	margin: 0;
 	font-size: 85%;
 	white-space: break-spaces;
-	background-color: #818b981f;
+	background-color: var(--w-code-background-color);
 	border-radius: 6px;
 }
 
