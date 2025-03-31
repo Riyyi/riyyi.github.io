@@ -4,9 +4,6 @@ import ViteComponents from "unplugin-vue-components/vite"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	bootstrapVueNext: {
-		css: false
-	},
 	compatibilityDate: "2024-11-01",
 	content: {
 		build: {
@@ -28,7 +25,6 @@ export default defineNuxtConfig({
 	},
 	css: [
 		"bootstrap/dist/css/bootstrap.min.css",
-		"bootstrap-vue-next/dist/bootstrap-vue-next.css",
 		"~/assets/css/style.css"
 	],
 	devtools: { enabled: true },
@@ -36,7 +32,6 @@ export default defineNuxtConfig({
 		public: "../public"
 	},
 	modules: [
-		"@bootstrap-vue-next/nuxt",
 		"@nuxt/content",
 		"@nuxt/eslint",
 		"@pinia/nuxt",
