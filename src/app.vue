@@ -6,7 +6,11 @@
 </template>
 
 <script setup lang="ts">
-const bootstrap = useNuxtApp().$bootstrap;
+import { useRouter } from "vue-router";
+import { useStateStore } from "@/stores/stateStore";
+
+const router = useRouter();
+const store = useStateStore();
 
 useHead({
 	titleTemplate: (titleChunk: string | undefined): string | null => {
@@ -14,14 +18,14 @@ useHead({
 	}
 })
 
-// Access bootstrap after the DOM is ready
-onMounted(() => {
-	// Initialize popovers
-	const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-	const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+// Init Bootstrap after navigation
+router.afterEach((_to, _from) => {
+	setTimeout(() => { store.initBootstrap(); }, 500);
+});
 
-	// Initialize tooltips
-	const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-	const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+// Init Bootstrap on initial page load, after the DOM is ready
+onMounted(() => {
+	// @ts-ignore
+	store.initBootstrap();
 });
 </script>

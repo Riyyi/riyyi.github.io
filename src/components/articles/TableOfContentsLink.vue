@@ -1,5 +1,5 @@
 <template>
-	<ul>
+	<ul class="mb-0">
 		<template v-for="link in links" :key="link.id">
 			<li>
 				<a :href="'#' + link.id">{{ link.text }}</a>

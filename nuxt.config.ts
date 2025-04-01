@@ -16,6 +16,7 @@ export default defineNuxtConfig({
 					]
 				},
 				toc: {
+					// @ts-ignore
 					title: "Table of Contents",
 					depth: 4, // include h4 headings
 					searchDepth: 2
@@ -51,6 +52,9 @@ export default defineNuxtConfig({
 	},
 	srcDir: "src/",
 	ssr: false,
+	typescript: {
+		typeCheck: true
+	},
 	vite: {
 		plugins: [
 			ViteComponents({

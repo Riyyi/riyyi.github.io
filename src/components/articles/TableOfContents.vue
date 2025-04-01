@@ -6,7 +6,7 @@
 				<a href="#">Overview</a>
 			</li>
 		</ul>
-		<ArticlesTableOfContentsLink :links="toc.links" :first="true" class="font-smaller mb-0" />
+		<ArticlesTableOfContentsLink :links="toc.links" :first="true" class="font-smaller" />
 	</aside>
 </template>
 
