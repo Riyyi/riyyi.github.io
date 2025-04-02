@@ -34,9 +34,11 @@ button.copy:hover {
 </style>
 
 <script setup lang="ts">
+import { useStateStore } from "@/stores/stateStore";
 import { nextTick, ref, watch } from "vue"
 
 const bootstrap = useNuxtApp().$bootstrap;
+const store = useStateStore();
 
 defineProps({
 	code: {
@@ -89,6 +91,7 @@ watch(copied, (newValue, oldValue) => {
 		if (newValue) {
 			// Ensure the DOM is updated before executing
 			nextTick(() => {
+				store.initBootstrap();
 				// @ts-ignore
 				stickyTooltip.value = new bootstrap.Tooltip(stickyTooltipElement.value, { trigger: "manual" });
 				stickyTooltip.value.show();
