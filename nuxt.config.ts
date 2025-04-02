@@ -9,7 +9,10 @@ export default defineNuxtConfig({
 		build: {
 			markdown: {
 				highlight: {
-					theme: "github-light",
+					theme: {
+						default: 'github-light',
+						dark: 'github-dark',
+					},
 					langs: [
 						// https://github.com/shikijs/shiki/blob/main/packages/langs/package.json
 						"c", "cpp", "css", "html", "js", "json", "lua", "md", "mdc", "php", "shell", "ts", "vue", "yaml"

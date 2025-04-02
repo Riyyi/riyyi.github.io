@@ -24,7 +24,7 @@
 		left: calc(100vw - (100vw - 960px) / 2 + 12px);
 		padding: 20px 5px 20px 0;
 		border-radius: 6px;
-		background-color: #fff;
+		background-color: var(--bs-body-bg);
 	}
 }
 

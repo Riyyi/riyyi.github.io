@@ -23,7 +23,7 @@
 	min-height: calc(100vh - 104px - .5rem);
 	padding: 20px 20px 50px 20px;
 
-	background-color: #fff;
+	background-color: var(--bs-body-bg);
 }
 
 @media (min-width: 576px) {

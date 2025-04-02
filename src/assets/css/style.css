@@ -2,8 +2,13 @@
 /* General */
 
 :root {
-	--w-code-background-color: #818b981f;
-    --w-pre-background-color: #f6f8fa;
+	--bs-secondary-bg: #f6f8fa;
+	--bs-tertiary-bg: #818b981f;
+}
+
+[data-bs-theme=dark] {
+	--bs-secondary-bg: #262a2f;
+	--bs-tertiary-bg: #2b3137;
 }
 
 html {
@@ -12,12 +17,16 @@ html {
 }
 
 body {
-	background-color: #f4f4f4;
+	background-color: var(--bs-light-bg-subtle);
+}
+
+[data-bs-theme=dark] body {
+	background-color: var(--bs-dark-bg-subtle);
 }
 
 /* Main content */
 /*----------------------------------------*/
 
 a:hover {
-	color: #818080 !important;
+	color: var(--bs-link-color) !important;
 }

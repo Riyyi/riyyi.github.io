@@ -10,7 +10,16 @@ export const useStateStore = defineStore("state", () => {
 	const toggleColorMode = (): void => {
 		colorMode.value = colorMode.value === "dark" ? "light" : "dark";
 		const html = document.querySelector("html") as HTMLElement;
+
+		// Theme used by Bootstrap
 		html.setAttribute('data-bs-theme', colorMode.value);
+
+		// Theme class used by shiki syntax highlighting
+		if (colorMode.value === "dark") {
+			html.classList.add("dark");
+		} else {
+			html.classList.remove("dark");
+		}
 	};
 
 	const popoverList = ref<any[]>([]);
