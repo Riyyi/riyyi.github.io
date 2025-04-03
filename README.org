@@ -9,7 +9,7 @@ Website, written in Typescript.
 Install dependencies:
 
 #+BEGIN_SRC sh
-$ bun install
+$ npm install
 #+END_SRC
 
 ** Development Server
@@ -17,8 +17,8 @@ $ bun install
 Start the development server on =http://localhost:3000=:
 
 #+BEGIN_SRC sh
-$ bun run dev
-$ bun run dev -o  # automatically open in the browser
+$ npm run dev
+$ npm run dev -- -o  # automatically open in the browser
 #+END_SRC
 
 ** Production
@@ -26,14 +26,14 @@ $ bun run dev -o  # automatically open in the browser
 Build for production:
 
 #+BEGIN_SRC sh
-$ bun run build     # for server-side rendering or hybrid
-$ bun run generate  # for static site generation
+$ npm run build     # for server-side rendering or hybrid
+$ npm run generate  # for static site generation
 #+END_SRC
 
 Locally preview production build:
 
 #+BEGIN_SRC sh
-$ bun run preview  # requires building first!
+$ npm run preview  # requires building first!
 #+END_SRC
 
 Reference: [[https://nuxt.com/docs/getting-started/deployment#client-side-only-rendering][nuxt/docs/deployment#client-side-only-rendering]]
@@ -43,38 +43,18 @@ Reference: [[https://nuxt.com/docs/getting-started/deployment#client-side-only-r
 - [[https://github.com/vuejs/core][Vue3]] JavaScript framework
 - [[https://github.com/nuxt/nuxt][Nuxt]] Vue framework
 - [[https://github.com/vuejs/pinia][Pinia]] State management
-- [[https://github.com/primefaces/primevue][PrimeVue]] Vue component library
+- [[https://github.com/twbs/bootstrap][Bootstrap5]] CSS library
 - [[https://github.com/colinhacks/zod][Zod]] Schema validation
 - [[https://github.com/microsoft/TypeScript][Typescript]] Static types in JavaScript
 - [[https://github.com/eslint/eslint][ESLint]] Code analyses tool
 
-** Package Reproduction
+* Todo
 
-The following bun commands have been run to fill the =package.json=:
-
-#+BEGIN_SRC sh
-$ bun x nuxi@latest init website
-
-# Development
-$ bun nuxi module add eslint
-$ bun install --dev typescript
-$ bun install --dev @vue/language-server
-$ bun install --dev @vue/typescript-plugin
-$ bun install -g typescript
-$ bun install -g @vue/language-server
-$ bun install -g @vue/typescript-plugin
-
-# Pinia
-$ bun install @pinia/nuxt                 # also add it to nuxt.config modules!
-$ bun install pinia-plugin-persistedstate # same as above
-
-# PrimeVue
-$ bun install primevue primeicons @primevue/themes @primevue/forms
-$ bun install --dev @primevue/nuxt-module
-
-# Zod
-$ bun install zod
-
-# UUID
-$ bun install uuid
-#+END_SRC
+- [ ] dark-mode
+  - [ ] persistence in localstorage
+- [X] <h> tag scroll fix
+  - [ ] pull request? https://github.com/nuxt-modules/mdc/tree/main/src/runtime/components/prose
+- [X] table of contents: https://github.com/hanyujie2002/nuxt-toc/blob/main/src/runtime/components/TableOfContents.vue
+- [X] nuke: bootstrap-vue-next
+- [ ] update readme: bun -> npm, primevue -> bootstrap
+- [X] better popup code copy button

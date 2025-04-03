@@ -26,8 +26,6 @@
 		"@nuxt/content": "^3.4.0",
 		"@nuxt/eslint": "^1.2.0",
 		"@types/bootstrap": "^5.2.10",
-		"@types/bun": "latest",
-		"@vue/compiler-sfc": "^3.5.13",
 		"@vue/language-server": "^2.1.10",
 		"@vue/typescript-plugin": "^2.1.10",
 		"nuxt": "^3.14.1592",

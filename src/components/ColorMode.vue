@@ -20,13 +20,13 @@
 			</li>
 			<li>
 				<a class="dropdown-item" :class="store.colorMode === 'dark' ? 'active' : ''" @click="store.setColorMode('dark')">
-					<IFaSolidMoon /> Dark
+					<IFaSolidMoon /> Dark &nbsp;
 					<IFaCheck v-if="store.colorMode === 'dark'" class="font-smaller float-right" />
 				</a>
 			</li>
 			<li>
 				<a class="dropdown-item" :class="store.colorMode === 'auto' ? 'active' : ''" @click="store.setColorMode('auto')">
-					<IFaAdjust width="1.3em" /> Auto
+					<IFaAdjust width="1.3em" /> Auto &nbsp;
 					<IFaCheck v-if="store.colorMode === 'auto'" class="font-smaller float-right" />
 				</a>
 			</li>
