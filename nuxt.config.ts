@@ -47,7 +47,6 @@ export default defineNuxtConfig({
 	},
 	piniaPluginPersistedstate: {
 		debug: process.env.NODE_ENV === "development", // log error to console
-		storage: "cookies",
 		cookieOptions: {
 			sameSite: "lax", // prevent CSRF
 			secure: process.env.NODE_ENV !== "development" // only send over HTTPS

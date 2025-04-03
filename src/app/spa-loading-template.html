@@ -1,41 +1,85 @@
 <!-- https://github.com/barelyhuman/snips/blob/dev/pages/css-loader.md -->
-<div class="loader"></div>
-<style>
-	.loader {
-		display: block;
-		position: fixed;
-		z-index: 1031;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 36px;
-		height: 36px;
-		box-sizing: border-box;
-		border: solid 2px transparent;
-		border-top-color: #000;
-		border-left-color: #000;
-		border-bottom-color: #efefef;
-		border-right-color: #efefef;
-		border-radius: 50%;
-		-webkit-animation: loader 400ms linear infinite;
-		animation: loader 400ms linear infinite;
-	}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style>
+			body {
+				background-color: #fff;
+			}
 
-	@-webkit-keyframes loader {
-		0% {
-			-webkit-transform: translate(-50%, -50%) rotate(0deg);
-		}
-		100% {
-			-webkit-transform: translate(-50%, -50%) rotate(360deg);
-		}
-	}
+			.dark {
+				background-color: #1a1d20;
+			}
 
-	@keyframes loader {
-		0% {
-			transform: translate(-50%, -50%) rotate(0deg);
-		}
-		100% {
-			transform: translate(-50%, -50%) rotate(360deg);
-		}
-	}
-</style>
+			.loader {
+				display: block;
+				position: fixed;
+				z-index: 1031;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 36px;
+				height: 36px;
+				box-sizing: border-box;
+				border: solid 2px transparent;
+				border-top-color: #000;
+				border-left-color: #000;
+				border-bottom-color: #efefef;
+				border-right-color: #efefef;
+				border-radius: 50%;
+				-webkit-animation: loader 400ms linear infinite;
+				animation: loader 400ms linear infinite;
+			}
+
+			.dark .loader {
+				border-top-color: #fff !important;
+				border-left-color: #fff !important;
+				border-bottom-color: #444 !important;
+				border-right-color: #444 !important;
+			}
+
+			@-webkit-keyframes loader {
+				0% {
+					-webkit-transform: translate(-50%, -50%) rotate(0deg);
+				}
+				100% {
+					-webkit-transform: translate(-50%, -50%) rotate(360deg);
+				}
+			}
+
+			@keyframes loader {
+				0% {
+					transform: translate(-50%, -50%) rotate(0deg);
+				}
+				100% {
+					transform: translate(-50%, -50%) rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="loader"></div>
+		<script>
+			let css = "light";
+			let state = null;
+
+			const json = localStorage.getItem("state");
+			if (json !== null) {
+				state = JSON.parse(json).colorMode;
+			}
+
+			if (state === null || state === "auto") {
+				const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (preferDark) {
+					css = "dark";
+				}
+			}
+			else if (state === "dark") {
+				css = "dark";
+			}
+
+			const element = document.querySelector("html");
+			element.classList.add(css);
+		</script>
+	</body>
+</html>

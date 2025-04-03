@@ -6,21 +6,34 @@ import bootstrap from "bootstrap/dist/js/bootstrap.bundle.min";
 
 export const useStateStore = defineStore("state", () => {
 
-	const colorMode = ref<string>("light");
-	const toggleColorMode = (): void => {
-		colorMode.value = colorMode.value === "dark" ? "light" : "dark";
-		const html = document.querySelector("html") as HTMLElement;
+	const colorMode = ref<string>("auto");
+	const setColorMode = (newMode: string): void => {
+		colorMode.value = newMode;
+		applyColorMode();
+	};
+	const applyColorMode = (): void => {
+		let css = "light";
+		if (colorMode.value === "auto") {
+			const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (preferDark) {
+				css = "dark";
+			}
+		}
+		else if (colorMode.value == "dark") {
+			css = "dark";
+		}
+
+		const html = document.documentElement as HTMLElement;
 
 		// Theme used by Bootstrap
-		html.setAttribute('data-bs-theme', colorMode.value);
+		html.setAttribute('data-bs-theme', css);
 
 		// Theme class used by shiki syntax highlighting
-		if (colorMode.value === "dark") {
+		html.classList.remove("dark");
+		if (css === "dark") {
 			html.classList.add("dark");
-		} else {
-			html.classList.remove("dark");
 		}
-	};
+	}
 
 	const popoverList = ref<any[]>([]);
 	const tooltipList = ref<any[]>([]);
@@ -37,7 +50,10 @@ export const useStateStore = defineStore("state", () => {
 		tooltipList.value = [...tooltipTriggerList].map(tooltip => new bootstrap.Tooltip(tooltip));
 	};
 
-	return { colorMode, toggleColorMode, initBootstrap }
+	return { colorMode, setColorMode, applyColorMode, initBootstrap }
 }, {
-	persist: process.env.NODE_ENV === 'development' ? true : false,
+	persist: {
+		pick: ["colorMode"],
+		storage: localStorage
+	}
 })

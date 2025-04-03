@@ -10,6 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     IBi0Circle: typeof import('~icons/bi/0-circle')['default']
     IBiActivity: typeof import('~icons/bi/activity')['default']
+    IFaAdjust: typeof import('~icons/fa/adjust')['default']
     IFaAngellist: typeof import('~icons/fa/angellist')['default']
     IFaCheck: typeof import('~icons/fa/check')['default']
     IFaClone: typeof import('~icons/fa/clone')['default']
@@ -22,6 +23,7 @@ declare module 'vue' {
     IFaLink: typeof import('~icons/fa/link')['default']
     IFaLinkedinSquare: typeof import('~icons/fa/linkedin-square')['default']
     IFaMoonO: typeof import('~icons/fa/moon-o')['default']
+    IFaSolidMoon: typeof import('~icons/fa-solid/moon')['default']
     IFaSolidSun: typeof import('~icons/fa-solid/sun')['default']
     IMdiAccountBox: typeof import('~icons/mdi/account-box')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

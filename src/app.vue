@@ -12,6 +12,9 @@ import { useStateStore } from "@/stores/stateStore";
 const router = useRouter();
 const store = useStateStore();
 
+// Set dark theme
+store.applyColorMode();
+
 useHead({
 	titleTemplate: (titleChunk: string | undefined): string | null => {
 		return titleChunk ? `${titleChunk} - website-vue` : 'website-vue';

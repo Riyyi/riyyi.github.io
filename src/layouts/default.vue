@@ -10,7 +10,7 @@
 		</div>
 		<SharedFooter />
 	</div>
-	<ToggleColorMode />
+	<ColorMode />
 </template>
 
 <style scoped>
