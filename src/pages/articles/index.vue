@@ -1,18 +1,47 @@
 <template>
 	<div>
 		<h1>Articles</h1>
-		<ul>
-			<li v-for="article in articles" :key="article.path">
-				<NuxtLink :to="article.path">{{ article.title }}</NuxtLink>
-			</li>
-		</ul>
 
-		<div v-for="article in articles" :key="article.path">
-			<pre>{{ article }}</pre>
+		<div class="row pt-5" v-for="article in articles" :key="article.path">
+			<div class="col-5 col-lg-4 col-xl-3">
+				<NuxtLink v-if="article.img" :to="article.path">
+					<img class="img-fluid" :src="article.img as string" :alt="article.title" loading="lazy" :title="article.title">
+				</NuxtLink>
+			</div>
+			<div class="col-7 col-lg-8 col-xl-9">
+				<NuxtLink v-if="article.img" :to="article.path">
+					<h4><strong>{{ article.title }}</strong></h4>
+				</NuxtLink>
+				{{ article.description }}<br>
+				<i><small>{{ article.sub }}</small></i>
+			</div>
 		</div>
+
+		<template v-if="isDev">
+			<br>
+			<div v-for="article in articles" :key="article.path">
+				<pre>{{ article }}</pre>
+			</div>
+		</template>
 	</div>
 </template>
 
+<style scoped>
+a {
+	text-decoration: none !important;
+}
+
+a h4 {
+	color: var(--bs-body-color);
+}
+
+a h4:hover {
+	color: var(--bs-link-hover-color);
+}
+</style>
+
 <script setup lang="ts">
-const { data: articles } = await useAsyncData("articles", () => queryCollection("content").all())
+import { useAsyncData, queryCollection } from "#imports";
+
+const { data: articles } = await useAsyncData("articles", () => queryCollection("content").order("date", "DESC").all())
 </script>

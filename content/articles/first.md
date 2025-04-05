@@ -2,6 +2,9 @@
 title: "My First Blog Post"
 description: "This is a test article."
 navigation: true
+sub: "C++20, GLSL, Lua"
+img: "/img/personal-website/login.png"
+date: "2025-03-01"
 ---
 
 Foobarbazbuz.

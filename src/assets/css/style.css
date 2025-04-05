@@ -26,7 +26,3 @@ body {
 
 /* Main content */
 /*----------------------------------------*/
-
-a:hover {
-	color: var(--bs-link-color) !important;
-}

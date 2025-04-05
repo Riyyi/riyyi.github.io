@@ -29,11 +29,11 @@
 
 /* Select any <a> inside a <h> */
 :deep(:is(h1, h2, h3, h4, h5, h6) a) {
-	color: inherit;
+	color: var(--bs-body-color);
 	text-decoration: none;
 }
 
-/* Select <pre class="shiki"> */
+/* Select <pre class="language-"> */
 :deep(pre[class^="language-"]) {
 	display: flex;
 	justify-content: space-between;
@@ -54,8 +54,7 @@
 
 /* Select <code> */
 :deep(code:not([class^="language-"]):not(pre code)) {
-	/* reset font to black */
-	color: inherit;
+	color: var(--bs-body-color);
 }
 </style>
 

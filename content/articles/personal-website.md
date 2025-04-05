@@ -1,7 +1,10 @@
 ---
 title: "Personal Website"
-description: "Open-source content management system."
+description: "An open-source content management system, used for this website."
 navigation: false
+sub: "PHP 7, MySQL, jQuery"
+img: "/img/personal-website/admin-menu.png"
+date: "2025-03-03"
 ---
 
 <small>Open-source content management system.<br>
@@ -25,18 +28,18 @@ Features:
 - CMS with CRUD functions for managing data
 - ORM for mapping between PHP classes and data
 - Login system
-  - Stay logged in using cookies
-  - Forget password with a generated link send using mail
+   - Stay logged in using cookies
+   - Forget password with a generated link send using mail
 - Security mitigations
-  - Password hashing using BCrypt
-  -  Per-user cryptographically secure generated salt
-  -  SQL injection protection using prepared statements
-  -  XSS
-    - Cookies set to 'HttpOnly'
-    - Escape rendered user input using: `htmlentities(ENT_QUOTES | ENT_HTML5, 'UTF-8');`
-  - CSRF
-    - Cookies 'SameSite' set to 'Strict'
-    - Token for each session used in POST/PUT/DELETE requests
+   - Password hashing using BCrypt
+   -  Per-user cryptographically secure generated salt
+   -  SQL injection protection using prepared statements
+   -  XSS
+      - Cookies set to 'HttpOnly'
+      - Escape rendered user input using: `htmlentities(ENT_QUOTES | ENT_HTML5, 'UTF-8');`
+   - CSRF
+     - Cookies 'SameSite' set to 'Strict'
+     - Token for each session used in POST/PUT/DELETE requests
 - Bootstrap
 - jQuery
 
