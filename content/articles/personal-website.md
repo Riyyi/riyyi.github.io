@@ -2,9 +2,12 @@
 title: "Personal Website"
 description: "An open-source content management system, used for this website."
 navigation: false
-sub: "PHP 7, MySQL, jQuery"
-img: "/img/personal-website/admin-menu.png"
 date: "2025-03-03"
+img: "/img/personal-website/admin-menu.png"
+tags:
+  - PHP 7
+  - MySQL
+  - jQuery
 ---
 
 <small>Open-source content management system.<br>

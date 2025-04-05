@@ -4,6 +4,7 @@
 			<ArticlesTableOfContents v-if="article.navigation" :toc="article.body.toc" />
 
 			<h1>{{ article.title }}</h1>
+			<p><i><small>{{ prettyDate(article.date) }}</small></i></p>
 			<ContentRenderer :value="article" />
 		</template>
 		<template v-else>

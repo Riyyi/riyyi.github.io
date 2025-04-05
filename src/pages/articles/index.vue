@@ -10,10 +10,13 @@
 			</div>
 			<div class="col-7 col-lg-8 col-xl-9">
 				<NuxtLink v-if="article.img" :to="article.path">
-					<h4><strong>{{ article.title }}</strong></h4>
+					<h4 class="mb-0"><strong>{{ article.title }}</strong></h4>
 				</NuxtLink>
-				{{ article.description }}<br>
-				<i><small>{{ article.sub }}</small></i>
+				<p><i><small>{{ prettyDate(article.date) }}</small></i></p>
+				<p>{{ article.description }}</p>
+				<template v-if="article.tags">
+					<p>Tags: <code>{{ article.tags.join(", ") }}</code></p>
+				</template>
 			</div>
 		</div>
 
@@ -38,6 +41,10 @@ a h4 {
 a h4:hover {
 	color: var(--bs-link-hover-color);
 }
+
+ code {
+	 color: var(--bs-link-color);
+ }
 </style>
 
 <script setup lang="ts">
