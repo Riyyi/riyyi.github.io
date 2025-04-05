@@ -9,8 +9,10 @@
 			<div class="collapse navbar-collapse" id="navbarText">
 				<!-- Left aligned nav items -->
 				<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
-					<li class="nav-item"><NuxtLink to="/articles" class="nav-link">Articles</NuxtLink></li>
-					<li class="nav-item"><NuxtLink to="/todos" class="nav-link">Todos</NuxtLink></li>
+					<li class="nav-item"><NuxtLink to="/software-projects" class="nav-link">Software Projects</NuxtLink></li>
+					<li class="nav-item"><NuxtLink to="/hardware-projects" class="nav-link">Hardware Projects</NuxtLink></li>
+					<li class="nav-item"><NuxtLink to="/algorithms" class="nav-link">Algorithms</NuxtLink></li>
+					<li class="nav-item"><NuxtLink to="/about-me" class="nav-link">About Me</NuxtLink></li>
 				</ul>
 				<!-- Right aligned nav items -->
 				<ul class="navbar-nav">

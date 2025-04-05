@@ -8,6 +8,7 @@ tags:
   - C++20
   - GLSL
   - Lua
+  - Software
 ---
 
 Foobarbazbuz.

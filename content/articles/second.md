@@ -6,6 +6,7 @@ date: "2025-03-02"
 img: "/img/personal-website/reset-password.png"
 tags:
   - Bash
+  - Hardware
 ---
 
 This is another article.

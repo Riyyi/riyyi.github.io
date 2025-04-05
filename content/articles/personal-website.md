@@ -8,6 +8,7 @@ tags:
   - PHP 7
   - MySQL
   - jQuery
+  - Software
 ---
 
 <small>Open-source content management system.<br>

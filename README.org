@@ -50,11 +50,13 @@ Reference: [[https://nuxt.com/docs/getting-started/deployment#client-side-only-r
 
 * Todo
 
-- [ ] dark-mode
-  - [ ] persistence in localstorage
+- [X] dark-mode
+  - [X] persistence in localstorage
 - [X] <h> tag scroll fix
   - [ ] pull request? https://github.com/nuxt-modules/mdc/tree/main/src/runtime/components/prose
 - [X] table of contents: https://github.com/hanyujie2002/nuxt-toc/blob/main/src/runtime/components/TableOfContents.vue
+  - [ ] for mobile via dropdown?
 - [X] nuke: bootstrap-vue-next
-- [ ] update readme: bun -> npm, primevue -> bootstrap
+- [X] update readme: bun -> npm, primevue -> bootstrap
 - [X] better popup code copy button
+- [ ] sitemap.xml
