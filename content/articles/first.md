@@ -4,8 +4,6 @@ description: "This is a test article."
 navigation: true
 ---
 
-## Hello World
-
 Foobarbazbuz.
 
 ## Component Rendering

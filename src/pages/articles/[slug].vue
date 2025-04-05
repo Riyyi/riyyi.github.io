@@ -4,7 +4,6 @@
 			<ArticlesTableOfContents v-if="article.navigation" :toc="article.body.toc" />
 
 			<h1>{{ article.title }}</h1>
-			<p>{{ article.description }}</p>
 			<ContentRenderer :value="article" />
 		</template>
 		<template v-else>
@@ -35,7 +34,7 @@
 }
 
 /* Select <pre class="shiki"> */
-:deep(pre.shiki) {
+:deep(pre[class^="language-"]) {
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 1rem;
@@ -54,7 +53,7 @@
 }
 
 /* Select <code> */
-:deep(code:not(.shiki):not(pre code)) {
+:deep(code:not([class^="language-"]):not(pre code)) {
 	/* reset font to black */
 	color: inherit;
 }
