@@ -8,8 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { withTrailingSlash, withLeadingSlash, joinURL } from "ufo"
-import { useRuntimeConfig, computed } from "#imports"
+import { computed } from "#imports"
 
 import ImageComponent from "#build/mdc-image-component.mjs"
 
@@ -43,17 +42,11 @@ const props = defineProps({
 		type: String,
 		default: "lazy" // eager, lazy
 	},
-})
+});
 
 const refinedSrc = computed(() => {
-	if (props.src?.startsWith("/") && !props.src.startsWith("//")) {
-		const _base = withLeadingSlash(withTrailingSlash(useRuntimeConfig().app.baseURL))
-		if (_base !== "/" && !props.src.startsWith(_base)) {
-			return joinURL(_base, props.src)
-		}
-	}
-	return props.src
-})
+	return getPublicPath(props.src);
+});
 </script>
 
 <!--
