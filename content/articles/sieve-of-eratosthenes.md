@@ -11,6 +11,8 @@ tags:
 Implementation of the ancient sieve of Eratosthenes math algorithm, used for
 finding prime numbers up to a given limit.
 
+![sieve of eratosthenes](/img/algorithms/sieve-of-eratosthenes.gif "sieve of eratosthenes")
+
 ```c
 #include <stdbool.h> // bool
 #include <stdio.h>   // printf

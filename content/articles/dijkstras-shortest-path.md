@@ -10,6 +10,8 @@ tags:
 
 Implementation of the shortest path algorithm, invented by Dijkstra.
 
+![dijkstra's shortest path](/img/algorithms/dijkstras-shortest-path.png "dijkstra's shortest path")
+
 ```python
 #!/usr/bin/python
 

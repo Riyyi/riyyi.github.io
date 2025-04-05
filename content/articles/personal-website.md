@@ -2,7 +2,7 @@
 title: "Personal Website"
 description: "An open-source content management system, used for this website."
 navigation: false
-date: "2025-03-03"
+date: "2021-03-03"
 img: "/img/personal-website/admin-menu.png"
 tags:
   - PHP 7
@@ -13,9 +13,9 @@ tags:
 
 <small>Open-source content management system.<br>
 Repository at
-[GitHub](https://github.com/riyyi/website),
-[GitLab](https://gitlab.com/riyyi/website) or
-[Gitea](https://git.riyyi.com/riyyi/website).
+[GitHub](https://github.com/riyyi/website){target="_blank"},
+[GitLab](https://gitlab.com/riyyi/website){target="_blank"} or
+[Gitea](https://git.riyyi.com/riyyi/website){target="_blank"}.
 </small>
 
 This is the CMS that is used for this website! It's written in PHP 7, MySQL and

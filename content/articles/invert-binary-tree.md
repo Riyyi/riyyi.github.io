@@ -10,6 +10,8 @@ tags:
 
 Implementation of inverting a binary tree.
 
+![invert binary tree](/img/algorithms/invert-binary-tree.png "invert binary tree")
+
 binarytree.h
 ```cpp
 #ifndef BINARYTREE_H

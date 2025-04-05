@@ -36,3 +36,14 @@ export const prettyDate = function (date: string | Date): string {
 
 	return formatted;
 }
+
+/**
+ * Check if DOM element is inside the current viewport
+ */
+export const isInViewport = function(el: HTMLElement): boolean {
+	const rect = el.getBoundingClientRect();
+	return (
+		rect.bottom > 0 &&
+		rect.top < (window.innerHeight || document.documentElement.clientHeight)
+	);
+}
