@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 					},
 					langs: [
 						// https://github.com/shikijs/shiki/blob/main/packages/langs/package.json
-						"c", "cpp", "css", "html", "js", "json", "lua", "md", "mdc", "php", "shell", "ts", "vue", "yaml"
+						"c", "cpp", "css", "html", "js", "json", "lua", "md", "mdc", "php", "python", "shell", "ts", "vue", "yaml"
 					]
 				},
 				toc: {

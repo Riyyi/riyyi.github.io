@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<h1>{{ props.title }}</h1>
+		<p>{{ props.description }}</p>
 
 		<div class="row pt-5" v-for="article in props.articles" :key="article.path">
 			<div class="col-5 col-lg-4 col-xl-3">
@@ -10,7 +11,7 @@
 				</NuxtLink>
 			</div>
 			<div class="col-7 col-lg-8 col-xl-9">
-				<NuxtLink v-if="article.img" :to="article.path">
+				<NuxtLink :to="article.path">
 					<h4 class="mb-0"><strong>{{ article.title }}</strong></h4>
 				</NuxtLink>
 				<p><i><small>{{ prettyDate(article.date) }}</small></i></p>
@@ -54,6 +55,7 @@ import type { ContentCollectionItem } from "@nuxt/content"
 const props = withDefaults(
 	defineProps<{
 		title?: string,
+		description?: string,
 		articles: ContentCollectionItem[] | null
 	}>(),
 	{
