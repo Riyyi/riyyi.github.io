@@ -24,11 +24,128 @@ my projects and create one cohesive style.
 
 ## Argument parsing
 
-placeholder
+This is a simple argument parsing feature, with the attempt of making it simpler
+to use than getopt. All you have to do is specify the variables you want to use,
+then add the options and arguments on the `ArgParser` object and finally call
+the `parse` function.
+
+```cpp
+#include <string>
+#include <vector>
+
+#include "ruc/argparser.h"
+
+int main(int argc, const char* argv[])
+{
+	bool verbose = false;
+	std::vector<std::string> targets {};
+
+	ruc::ArgParser argParser;
+	argParser.addOption(verbose, 'v', "verbose", nullptr, nullptr);
+	argParser.addArgument(targets, "targets", nullptr, nullptr, ruc::ArgParser::Required::No);
+	argParser.parse(argc, argv);
+
+	// Do some work here..
+
+	return 0;
+}
+```
+
+The `nullptr`'s in the above example were going to be used for automatic help
+string generation, but that isn't implemented yet.
 
 ## Formatting library
 
-placeholder
+This is basically a partial copy of the `fmt` library, from before that became
+part of the C++20 standard and I didn't want to use an additional dependency in
+my projects, because that is less fun!
+
+The part of `fmt` that is implement is the
+"[mini-language](https://fmt.dev/11.1/syntax/#format-specification-mini-language)",
+which is a very convenient API.
+
+```cpp
+#include <string>
+
+#include "ruc/format/format.h"
+#include "ruc/format/print.h"
+
+int main(int argc, const char* argv[])
+{
+	std::string fmt = format(
+		R"(
+	number {}
+	string {}
+	bool {}j
+	double {}
+	double {:.2} with 2 precision
+)", 123, "this is a string", true, 456.789, 3.14159265359);
+	print("{}\n", fmt);
+
+	return 0;
+}
+```
+
+Which results the the output.
+
+```
+	number 123
+	string this is a string
+	bool true
+	double 456.789000
+	double 3.14 with 2 precision
+```
+
+The implementation consists of 2 major parts, the parsing of the format string
+and the `format` and `print` functions. The parsing part isn't that complex, so
+wont be discussed here. The other secion is interesting, however.
+
+The functions are implemented with variadic arguments using type erasure, this
+improves both compile time and binary size significantly. What it also does, is
+allow the library to work on types that are specified by the user and are
+therefor not part of the library.
+
+The formatter implements all the primitives and some of the STL types, it can be
+extended by the user. The basic use-case is to specify to just the `format`
+function, but the `parser` function can also be overwritten.
+
+```cpp
+// In the header we are extending the existing formatter for vectors,
+// so we take advantage of their nice formatting automatically
+template<>
+struct ruc::format::Formatter<glm::vec4> : Formatter<std::vector<float>> {
+	void format(Builder& builder, glm::vec4 value) const;
+};
+
+// Then in the implementation, we implement the format functon
+void ruc::format::Formatter<glm::vec4>::format(Builder& builder, glm::vec4 value) const
+{
+	return Formatter<std::vector<float>>::format(builder, { value.x, value.y, value.z, value.w });
+}
+```
+
+Users can even extend formatters based on their own formats. In this example we
+are extending the vector (`glm::vec4`) formatter, so we can also print matrices
+(`glm::mat4`).
+
+```cpp
+template<>
+struct ruc::format::Formatter<glm::mat4> : Formatter<glm::vec4> {
+	void format(Builder& builder, glm::mat4 value) const;
+};
+
+void ruc::format::Formatter<glm::mat4>::format(Builder& builder, glm::mat4 value) const
+{
+	builder.putString("mat4 ");
+	Formatter<glm::vec4>::format(builder, value[0]);
+	builder.putString("\n     ");
+	Formatter<glm::vec4>::format(builder, value[1]);
+	builder.putString("\n     ");
+	Formatter<glm::vec4>::format(builder, value[2]);
+	builder.putString("\n     ");
+	return Formatter<glm::vec4>::format(builder, value[3]);
+}
+```
 
 ## JSON parsing
 
