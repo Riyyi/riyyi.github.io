@@ -20,6 +20,7 @@ declare module 'vue' {
     IFaGithub: typeof import('~icons/fa/github')['default']
     IFaGitlab: typeof import('~icons/fa/gitlab')['default']
     IFaHome: typeof import('~icons/fa/home')['default']
+    IFaImage: typeof import('~icons/fa/image')['default']
     IFaLink: typeof import('~icons/fa/link')['default']
     IFaLinkedinSquare: typeof import('~icons/fa/linkedin-square')['default']
     IFaMoonO: typeof import('~icons/fa/moon-o')['default']
