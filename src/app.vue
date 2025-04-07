@@ -16,6 +16,9 @@ const store = useStateStore();
 store.applyColorMode();
 
 useHead({
+	link: [
+		{ rel: "icon", type: "image/x-icon", href: getPublicPath("/favicon.ico") },
+	],
 	titleTemplate: (titleChunk: string | undefined): string | null => {
 		return titleChunk ? `${titleChunk} - website-vue` : 'website-vue';
 	}
