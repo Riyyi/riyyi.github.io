@@ -20,7 +20,7 @@ useHead({
 		{ rel: "icon", type: "image/x-icon", href: getPublicPath("/favicon.ico") },
 	],
 	titleTemplate: (titleChunk: string | undefined): string | null => {
-		return titleChunk ? `${titleChunk} - website-vue` : 'website-vue';
+		return titleChunk ? `${titleChunk} - Rick van Vonderen` : 'Rick van Vonderen';
 	}
 })
 

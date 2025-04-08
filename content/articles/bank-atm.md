@@ -25,7 +25,7 @@ for the presentation that I gave at Hogeschool Rotterdam.
 
 Korte video waarin de meeste functionaliteit van de bank ATM wordt getoond.
 
-::VideoLazy{:src="https://riyyi.com/media/bank-atm-demo.webm"}
+::VideoLazy{:src="/img/bank-atm/demo.webm"}
 ::
 
 ## Overzicht componenten

@@ -36,10 +36,10 @@ export default defineNuxtConfig({
 		public: "../public"
 	},
 	modules: [
-		"@nuxt/content",
-		"@nuxt/eslint",
 		"@nuxtjs/robots",
 		"@nuxtjs/sitemap",
+		"@nuxt/content", // NOTE: @nuxt/content after robots and sitemap
+		"@nuxt/eslint",
 		"@pinia/nuxt",
 		"pinia-plugin-persistedstate/nuxt",
 		"unplugin-icons/nuxt"
@@ -53,6 +53,10 @@ export default defineNuxtConfig({
 			sameSite: "lax", // prevent CSRF
 			secure: process.env.NODE_ENV !== "development" // only send over HTTPS
 		}
+	},
+	routeRules: {
+		// Dont add to the sitemap.xml
+		"/__nuxt_content/**": { robots: false },
 	},
 	site: { url: "https://riyyi.com", name: "Personal Website" },
 	srcDir: "src/",

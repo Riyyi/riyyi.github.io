@@ -32,5 +32,5 @@ Preview.
 Demo showcasing translation, rotation, scaling and textures working. You can
 also fly around, which is not shown in the video.
 
-::VideoLazy{:src="https://riyyi.com/media/opengl-test-demo.webm"}
+::VideoLazy{:src="/img/opengl-test-demo.webm"}
 ::

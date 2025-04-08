@@ -76,5 +76,5 @@ Completed assembly.
 Domoticz is used as a controller, which completes the smart outlet project. View
 the demo below.
 
-::VideoLazy{:src="https://riyyi.com/media/smart-outlet-demo.webm"}
+::VideoLazy{:src="/img/smart-outlet/demo.webm"}
 ::
