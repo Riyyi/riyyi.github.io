@@ -38,6 +38,8 @@ export default defineNuxtConfig({
 	modules: [
 		"@nuxt/content",
 		"@nuxt/eslint",
+		"@nuxtjs/robots",
+		"@nuxtjs/sitemap",
 		"@pinia/nuxt",
 		"pinia-plugin-persistedstate/nuxt",
 		"unplugin-icons/nuxt"
@@ -52,6 +54,7 @@ export default defineNuxtConfig({
 			secure: process.env.NODE_ENV !== "development" // only send over HTTPS
 		}
 	},
+	site: { url: "https://riyyi.com", name: "Personal Website" },
 	srcDir: "src/",
 	ssr: false,
 	typescript: {

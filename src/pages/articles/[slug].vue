@@ -69,8 +69,5 @@ const { data: article } = await useAsyncData<ContentCollectionItem | null>(
 	() => queryCollection("content").path("/articles/" + params.slug).first()
 );
 
-useSeoMeta({
-	title: article.value?.title,
-	description: article.value?.description
-})
+useSeoMeta(article.value?.seo || {});
 </script>
