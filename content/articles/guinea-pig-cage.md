@@ -2,7 +2,7 @@
 title: "Guinea Pig Cage"
 description: "Pet guinea pig cage."
 navigation: true
-date: "2018-06"
+date: "2018-06-01"
 img: "/img/guinea-pig-cage/pig.jpg"
 tags:
   - Hardware
