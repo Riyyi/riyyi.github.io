@@ -59,4 +59,6 @@ Reference: [[https://nuxt.com/docs/getting-started/deployment#client-side-only-r
 - [X] nuke: bootstrap-vue-next
 - [X] update readme: bun -> npm, primevue -> bootstrap
 - [X] better popup code copy button
-- [ ] sitemap.xml
+- [X] sitemap.xml
+- [X] rename github repo so /website-vue/ isnt baseURL
+- [ ] 404 page style
