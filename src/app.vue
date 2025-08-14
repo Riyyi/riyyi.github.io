@@ -12,8 +12,10 @@ import { useStateStore } from "@/stores/stateStore";
 const router = useRouter();
 const store = useStateStore();
 
-// Set dark theme
-store.applyColorMode();
+onBeforeMount(() => {
+	// Set dark theme
+	store.applyColorMode();
+});
 
 useHead({
 	link: [
@@ -22,7 +24,7 @@ useHead({
 	titleTemplate: (titleChunk: string | undefined): string | null => {
 		return titleChunk ? `${titleChunk} - Rick van Vonderen` : 'Rick van Vonderen';
 	}
-})
+});
 
 // Init Bootstrap after navigation
 router.afterEach((_to, _from) => {
