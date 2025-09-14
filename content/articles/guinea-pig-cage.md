@@ -12,11 +12,10 @@ This is a custom designed and build cage for the guinea pigs of my girlfriend.
 
 ## Design
 
-3D model of the cage.<br>
-[View](https://www.tinkercad.com/embed/jtFlKzD78Hj)
-the model in 3D.<br>
-See the project at
-[Thinkercad](https://www.tinkercad.com/things/jtFlKzD78Hj).
+Below is a picture of the design. And here are the links to the 3D model
+[viewer](https://www.tinkercad.com/embed/jtFlKzD78Hj){target="_blank"}
+and the
+[project](https://www.tinkercad.com/things/jtFlKzD78Hj){target="_blank"}.
 
 ![](/img/guinea-pig-cage/3d-model.png "")
 

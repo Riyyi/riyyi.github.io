@@ -1,5 +1,5 @@
 <template>
-	<video ref="videoRef" class="w-100" controls>
+	<video ref="videoRef" :class="props.class" controls>
 		<source :src="loadedSrc" type="video/webm">
 		Your browser does not support the video tag.
 	</video>
@@ -12,6 +12,10 @@ const props = defineProps({
 	src: {
 		type: String,
 		default: ""
+	},
+	class: {
+		type: String,
+		default: "w-100"
 	},
 });
 
@@ -52,6 +56,6 @@ onUnmounted(() => {
 <!--
 	 Usage:
 
-	::VideoLazy{:src="/img/path-to-video.webm"}
+	::VideoLazy{:src="/img/path-to-video.webm" .myclass .my-other-class}
 	::
 -->
