@@ -33,7 +33,7 @@ export default defineNuxtConfig({
 	],
 	devtools: { enabled: true },
 	dir: {
-		public: "../public"
+		app: "app"
 	},
 	modules: [
 		"@nuxtjs/robots",
@@ -62,7 +62,12 @@ export default defineNuxtConfig({
 	srcDir: "src/",
 	ssr: false,
 	typescript: {
-		typeCheck: true
+		typeCheck: true,
+		tsConfig: {
+			compilerOptions: {
+				types: ["node"]
+			}
+		}
 	},
 	vite: {
 		plugins: [

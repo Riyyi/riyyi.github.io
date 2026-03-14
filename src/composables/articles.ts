@@ -2,7 +2,7 @@ import { useAsyncData, queryCollection } from "#imports"
 import type { ContentCollectionItem } from "@nuxt/content"
 
 export const articleCollection = async (category: string) => {
-	const { data } = await useAsyncData<ContentCollectionItem[] | null>(
+	const { data } = await useAsyncData<ContentCollectionItem[] | null | undefined>(
 		`${category}-articles`,
 		() => queryCollection("content").where("tags", "LIKE", `%${category}%`).order("date", "DESC").all()
 	);

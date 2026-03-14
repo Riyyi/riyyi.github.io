@@ -56,7 +56,7 @@ const props = withDefaults(
 	defineProps<{
 		title?: string,
 		description?: string,
-		articles: ContentCollectionItem[] | null
+		articles: ContentCollectionItem[] | null | undefined
 	}>(),
 	{
 		title: "Articles",
